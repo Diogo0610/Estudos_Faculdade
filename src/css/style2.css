@@ -1,0 +1,100 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: #212123;
+  margin: 4rem;
+}
+
+.card__giratorio {
+  background-color: transparent;
+  width: 450px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.card__giratorio-conteudo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card__giratorio:hover .card__giratorio-conteudo {
+  transform: rotateY(180deg);
+}
+
+.card__giratorio-conteudo--frente,
+.card__giratorio-conteudo--traseira {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card__giratorio-conteudo--frente {
+  background: linear-gradient(-229deg, #0093e9, #80d0c7);
+}
+
+.card__giratorio-conteudo--traseira {
+  background: linear-gradient(229deg, #0093e9, #80d0c7);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card__giratorio-conteudo--traseira h1,
+.card__giratorio-conteudo--traseira p {
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card__giratorio-conteudo--traseira h1 {
+  font-size: 1.7rem;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  filter: drop-shadow(2px 2px 5px black);
+  opacity: 0.7;
+}
+
+h1,
+.lista {
+  display: inline-block; /* define que os elementos serão exibidos em uma linha */
+  vertical-align: middle; /* alinha os elementos verticalmente */
+  margin: 0; /* remove as margens padrão */
+}
+
+h1 {
+  font-size: 24px; /* ajusta o tamanho da fonte conforme necessário */
+  margin-right: 20px; /* adiciona uma margem à direita para separar o título da lista */
+}
+
+.lista {
+  list-style: none; /* remove os marcadores padrão da lista */
+  margin-left: 0; /* remove a margem esquerda padrão */
+  padding-left: 0; /* remove o preenchimento padrão */
+}
+
+.lista li {
+  margin-bottom: 5px; /* adiciona uma margem inferior para separar os itens da lista */
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
